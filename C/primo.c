@@ -29,7 +29,7 @@ int main (void){
 	free(salvar);
 	return 0;
 }
-void primo (int *v, int *s, int y){	// Para melhora de eficencia deveria fazer mudar a condicao de verificao ate a raiz quadrada(melhor opcao) ou ate a metade + 1 
+void primo (int *v, int *s, int y){	// Para melhorar a eficiência, deve-se modificar a condição de verificação para iterar até a raiz quadrada (melhor opção) em vez de até a metade + 1.
 	int cont, primo, testador, contf = 0; 
 	for ( cont = 0 ; cont < y ; cont++ ){
 		testador = 0;
