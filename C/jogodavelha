@@ -1,0 +1,78 @@
+#include <stdio.h>
+#include <stdlib.h>
+int ganhou(char *x);
+void cabeca(char *x);
+int main (void){
+	int i = -1, cont, aux, r;
+	char xeo[] = "123456789";
+	cabeca(xeo);
+	for ( ; ; ){
+	do{
+	aux = 0;
+	printf("Quer Jogar Onde [X]: ");
+	r = scanf("%d", &i); // 0 == False, ou seja, nao conseguiu ler, 1 conseguiu ler um valor
+	if (r != 1){ 
+		system("cls");
+		cabeca(xeo);
+		printf("Digite um valor inteiro disponivel!\n");
+		while(getchar() != '\n'); // usar para limpar o buffer
+		continue; // voltar para o começo do lupe
+	}
+	for ( cont = 0 ; cont < 9 ; cont++){
+		if (xeo[cont] == i + 48){
+			xeo[cont] = 'X';
+			aux = 1;
+		}
+	}
+	if ( aux == 0 )
+		system("cls");
+		cabeca(xeo);
+		printf("Jogada Invalida!\n");
+	}while (aux == 0);
+	system("cls");
+	cabeca(xeo);
+	do{
+	aux = 0;
+	printf("Quer Jogar Onde [O]: ");
+	r = scanf("%d", &i);
+	if (r != 1){
+		system("cls");
+		cabeca(xeo);
+		printf("Digite um valor inteiro disponivel!\n");
+		while(getchar() != '\n');
+		continue;
+	}
+	for ( cont = 0 ; cont < 9 ; cont++){
+		if (xeo[cont] == i + 48){
+			xeo[cont] = 'O';
+			aux = 1;
+		}
+	}	
+	if (aux == 0)
+		system("cls");
+		cabeca(xeo);
+		printf("Jogada Invalida!\n");
+	} while (aux == 0);
+	system("cls");
+	cabeca(xeo);		
+	}
+	return 0;
+}
+void cabeca(char *x){
+	printf("+---+---+---+\n");
+	printf("| %c | %c | %c |\n", x[0], x[1], x[2]);
+	printf("+---+---+---+\n");
+	printf("| %c | %c | %c |\n", x[3], x[4], x[5]);
+	printf("+---+---+---+\n");
+	printf("| %c | %c | %c |\n", x[6], x[7], x[8]);	
+	printf("+---+---+---+\n");	
+}
+int ganhou(char *x){
+	if (x[0] == 'X' && x[1] == 'X' && x[2] == 'X')
+		return 1;
+	if (x[3] == 'X' && x[4] == 'X' && x[5] == 'X')
+		return 1;
+	if (x[6] == 'X' && x[7] == 'X' && x[8] == 'X')
+		return 1;
+	return 0;
+	}
