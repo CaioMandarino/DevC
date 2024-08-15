@@ -2,9 +2,12 @@
 #include <stdlib.h>
 int ganhou(char y[3][3]);
 void cabeca(char x[3][3]);
+void placar(int px, int po, int pe);
 int main (void){
-	int i = -1, cont, cont1, aux, r, gan = 0, empate = 0;;
+	int i = -1, cont, cont1, aux, r, gan = 0, empate = 0, pox = 0, poo = 0, poe = 0, valor = '1';
 	char xeo[3][3] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
+	char sair = 'N';
+	placar(pox, poo, poe);
 	cabeca(xeo);
 	for ( ; ; ){
 		do{ 
@@ -13,6 +16,7 @@ int main (void){
 			r = scanf("%d", &i); // 0 == False, ou seja, nao conseguiu ler, 1 conseguiu ler um valor
 			if (r != 1){ 
 				system("cls");
+				placar(pox, poo, poe);
 				cabeca(xeo);
 				printf("Digite um valor inteiro disponivel!\n");
 				while(getchar() != '\n'); // usar para limpar o buffer
@@ -28,23 +32,57 @@ int main (void){
 			}
 			if ( aux == 0 ){
 				system("cls");
+				placar(pox, poo, poe);
 				cabeca(xeo);
 				printf("Jogada Invalida!\n");				
 			}
 		}while (aux == 0);
 		++empate; 
 		system("cls");
+		placar(pox, poo, poe);
 		cabeca(xeo);
 		gan = ganhou(xeo);
 		if (gan == 1){
-			printf("[X] Ganhou!\n");
+			printf("[X] Ganhou!\nQuer fechar o programa? [S] para SIM e [N] para NAO:\n");
+			scanf(" %c", &sair);
+			if ( sair == 'S' || sair == 's'){
+				exit(0);
+			}
+			while(getchar() != '\n');
+			for ( cont = 0 ; cont < 3 ; cont++){
+				for ( cont1 = 0 ; cont1 < 3 ; cont1++){
+					xeo[cont][cont1] = valor;
+					valor++;
+				}
+			}
+			pox++;
+			system("cls");
+			placar(pox, poo, poe);
+			cabeca(xeo);
 			system("pause");
-			exit(0);			
+			empate = 0;
+			continue;	
 		}
 		if ( empate == 5){
-			printf("O Jogo Empatou!\n");
+			printf("O Jogo Empatou!\nQuer fechar o programa? [S] para SIM e [N] para NAO:\n");
+			scanf(" %c", &sair);
+			if ( sair == 'S' || sair == 's'){
+				exit(0);
+			}
+			while(getchar() != '\n');
+			for ( cont = 0 ; cont < 3 ; cont++){
+				for ( cont1 = 0 ; cont1 < 3 ; cont1++){
+					xeo[cont][cont1] = valor;
+					valor++;
+				}
+			}
+			poe++;
+			system("cls");
+			placar(pox, poo, poe);
+			cabeca(xeo);
 			system("pause");
-			exit(0);
+			empate = 0;
+			continue;	
 		}
 		do{
 			aux = 0;
@@ -52,6 +90,7 @@ int main (void){
 			r = scanf("%d", &i);
 			if (r != 1){
 				system("cls");
+				placar(pox, poo, poe);
 				cabeca(xeo);
 				printf("Digite um valor inteiro disponivel!\n");
 				while(getchar() != '\n');
@@ -67,17 +106,35 @@ int main (void){
 			}	
 			if (aux == 0){
 				system("cls");
+				placar(pox, poo, poe);
 				cabeca(xeo);
 				printf("Jogada Invalida!\n");				
 			}
 		} while (aux == 0);
 		system("cls");
+		placar(pox, poo, poe);
 		cabeca(xeo);
 		gan = ganhou(xeo);
 		if (gan == 1){
-			printf("[O] Ganhou!\n");
+			printf("[O] Ganhou!\nQuer fechar o programa? [S] para SIM e [N] para NAO:\n");
+			scanf(" %c", &sair);
+			if ( sair == 'S' || sair == 's'){
+				exit(0);
+			}
+			while(getchar() != '\n');
+			for ( cont = 0 ; cont < 3 ; cont++){
+				for ( cont1 = 0 ; cont1 < 3 ; cont1++){
+					xeo[cont][cont1] = valor;
+					valor++;
+				}
+			}
+			poo++;
+			system("cls");
+			placar(pox, poo, poe);
+			cabeca(xeo);
 			system("pause");
-			exit(0);			
+			empate = 0;
+			continue;				
 		}		
 	}
 	return 0;
@@ -147,4 +204,10 @@ int ganhou(char y[3][3]){
 	
 	return 0;
 	}
-	
+void placar(int px, int po, int pe){
+	printf("        Placar\n");
+	printf("   [X]    [O]    [E]\n");
+	printf("+------+------+------+\n");
+	printf("|  %2d  |  %2d  |  %2d  |\n", px, po, pe);
+	printf("+------+------+------+\n\n\n");
+}
