@@ -49,6 +49,7 @@ int main (void){
 				exit(0);
 			}
 			while(getchar() != '\n');
+			valor = '1';
 			for ( cont = 0 ; cont < 3 ; cont++){
 				for ( cont1 = 0 ; cont1 < 3 ; cont1++){
 					xeo[cont][cont1] = valor;
@@ -70,6 +71,7 @@ int main (void){
 				exit(0);
 			}
 			while(getchar() != '\n');
+			valor = '1';
 			for ( cont = 0 ; cont < 3 ; cont++){
 				for ( cont1 = 0 ; cont1 < 3 ; cont1++){
 					xeo[cont][cont1] = valor;
@@ -122,6 +124,7 @@ int main (void){
 				exit(0);
 			}
 			while(getchar() != '\n');
+			valor = '1';
 			for ( cont = 0 ; cont < 3 ; cont++){
 				for ( cont1 = 0 ; cont1 < 3 ; cont1++){
 					xeo[cont][cont1] = valor;
