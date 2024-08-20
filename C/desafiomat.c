@@ -14,31 +14,31 @@ int main(void) {
 
     for (;;) { // Início de um loop infinito para o controle dos semáforos
         cabeca(s1, s2, s3, s4); // Função para exibir as cores dos semáforos na tela
-        sleep(18); // Temporizador de 18s para simular a passagem do tempo
+        sleep(17); // Temporizador de 17s para simular a passagem do tempo
         amarelo(s2); // Chama a função para trocar a cor do segundo semáforo para Amarelo
         system("cls"); // Limpar tela 
         cabeca(s1, s2, s3, s4); // Chama a função de novo para atualizar com as cores trocadas
-        sleep(2); // Temporizador de 2s para simular a passagem do tempo
+        sleep(3); // Temporizador de 3s para simular a passagem do tempo
         troca(s2); // Chama a função para trocar a cor do segundo semáforo 
         troca(s3); // Chama a função para trocar a cor do terceiro semáforo
         system("cls"); // Limpar tela 
         cabeca(s1, s2, s3, s4); // Chama a função de novo para atualizar com as cores trocadas
-        sleep(18); // Temporizador de 18s para simular a passagem do tempo
+        sleep(17); // Temporizador de 17s para simular a passagem do tempo
         amarelo(s3); // Chama a função para trocar a cor do terceiro semáforo para Amarelo
         system("cls"); // Limpar tela 
         cabeca(s1, s2, s3, s4); // Chama a função de novo para atualizar com as cores trocadas
-        sleep(2); // Temporizador de 2s para simular a passagem do tempo
+        sleep(3); // Temporizador de 3s para simular a passagem do tempo
         troca(s3); // Chama a função para trocar a cor do terceiro semáforo
         troca(s1); // Chama a função para trocar a cor do primeiro semáforo
         troca(s4); // Chama a função para trocar a cor do quarto semáforo
         system("cls"); // Limpar tela 
         cabeca(s1, s2, s3, s4); // Chama a função de novo para atualizar com as cores trocadas
-        sleep(38); // Temporizador de 38s para simular a passagem do tempo
+        sleep(37); // Temporizador de 37s para simular a passagem do tempo
         amarelo(s1); // Chama a função para trocar a cor do primeiro semáforo para Amarelo
         amarelo(s4); // Chama a função para trocar a cor do quarto semáforo para Amarelo
         system("cls"); // Limpar tela 
         cabeca(s1, s2, s3, s4); // Chama a função de novo para atualizar com as cores trocadas
-        sleep(2); // Temporizador de 2s para simular a passagem do tempo
+        sleep(3); // Temporizador de 3s para simular a passagem do tempo
         troca(s1); // Chama a função para trocar a cor do primeiro semáforo 
         troca(s4); // Chama a função para trocar a cor do quarto semáforo 
         troca(s2); // Chama a função para trocar a cor do segundo semáforo 
